@@ -1,0 +1,16 @@
+#font-logo {
+  font-family: sabana;
+  font-size: 34px;
+}
+
+#navbarSupportedContent ul li{
+  font-size: 18px;
+}
+
+a:hover {
+  background-color: #23DC64;
+}
+
+a{
+  text-decoration: none;
+}

@@ -1,0 +1,83 @@
+html {
+  scroll-behavior: smooth;
+}
+
+#font-logo {
+  font-family: sabana;
+  font-size: 34px;
+}
+
+#navbarSupportedContent ul li{
+  font-size: 18px;
+}
+.container-heroes {
+  background: rgb(35, 220, 193, 0.2)
+}
+.container-heroes h2 {
+  font-size: 50px;
+  font-family: sabana;
+}
+
+#visual {
+  z-index: -1;
+  position: absolute;
+}
+
+#link-surah {
+  color: black;
+  text-decoration: none;
+}
+
+#link-surah a:hover {
+  background-color: #23DC64;
+}
+a:hover {
+  background-color: #23DC64;
+}
+
+#Al-quran .isiSurat div a:hover {
+  background-color: #23DC64;
+}
+
+
+@media screen and (min-width: 768px) {
+        .ambilflex {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+      
+
+      .my-width {
+        width: 100%;
+      }
+
+      @media screen and (min-width: 900px) {
+        .my-width {
+          width: 47%;
+        }
+
+        
+      }
+
+      @media screen and (min-width: 1200px) {
+        .my-width {
+          width: 31%;
+        }
+      }
+      
+      @media screen and (max-width: 1240px) {
+        /* #icon-svg {
+          display: none;
+        } */
+        #row-desc {
+          justify-content: center;
+        }
+        /* #row-heroes {
+          display: none;
+        } */
+      }
+
+
+
+
