@@ -45,9 +45,8 @@ function onload() {
     });
 }
 
-const audio = document.getElementById("myAudio");
-
 function togglePlayPause() {
+  const audio = document.getElementById("myAudio");
   if (audio.paused) {
     audio.play();
   } else {
