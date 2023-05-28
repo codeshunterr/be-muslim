@@ -9,6 +9,7 @@ function onload() {
     .then((response) => {
       const data = response.data;
       const surah = data.ayat;
+      const audioFull = data.audioFull["01"];
 
       const listAyat = data.ayat;
       let namaDeskSurah = [data.namaLatin, data.arti, data.jumlahAyat];
@@ -26,6 +27,7 @@ function onload() {
       listAyat.forEach((e) => {
         ayat += pilihAyat(e);
       });
+      document.getElementById("myAudio").src = audioFull;
       const isiNamaSurah = document.getElementById("surahNames");
       const isiAyat = document.getElementById("list-ayat");
       const ayatKey = document.querySelector(".surahDesc");
@@ -34,14 +36,6 @@ function onload() {
       isiNamaSurah.innerHTML = isiArti;
     });
 }
-fetch(`https:equran.id/api/v2/tafsir/${queryParam.nomor_surah}`)
-  .then((response) => response.json())
-  .then((response) => {
-    const datas = response.data;
-    const audioFiles = datas.audioFull;
-
-    document.getElementById("myAudio").src = audioFiles["01"];
-  });
 
 function togglePlayPause() {
   const audio = document.getElementById("myAudio");
