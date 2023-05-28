@@ -1,10 +1,9 @@
+let queryParam = { nomor_surah: 0 };
+const params = new URLSearchParams(window.location.search);
+for (const [key, value] of params) {
+  queryParam.nomor_surah = value;
+}
 function onload() {
-  let queryParam = { nomor_surah: 0 };
-  const params = new URLSearchParams(window.location.search);
-  for (const [key, value] of params) {
-    queryParam.nomor_surah = value;
-  }
-
   fetch(`https://equran.id/api/v2/surat/${queryParam.nomor_surah}`)
     .then((response) => response.json())
     .then((response) => {
@@ -34,26 +33,25 @@ function onload() {
       isiAyat.innerHTML = ayat;
       isiNamaSurah.innerHTML = isiArti;
     });
-
-  fetch(`https:equran.id/api/v2/tafsir/${queryParam.nomor_surah}`)
-    .then((response) => response.json())
-    .then((response) => {
-      const datas = response.data;
-      const audioFiles = datas.audioFull;
-
-      document.getElementById("myAudio").src = audioFiles["01"];
-    });
 }
+fetch(`https:equran.id/api/v2/tafsir/${queryParam.nomor_surah}`)
+  .then((response) => response.json())
+  .then((response) => {
+    const datas = response.data;
+    const audioFiles = datas.audioFull;
+
+    document.getElementById("myAudio").src = audioFiles["01"];
+  });
 
 function togglePlayPause() {
   const audio = document.getElementById("myAudio");
+
   if (audio.paused) {
     audio.play();
   } else {
     audio.pause();
   }
 }
-
 function toggleTafsir() {
   let queryParam = { nomor_surah: 0 };
   const params = new URLSearchParams(window.location.search);
